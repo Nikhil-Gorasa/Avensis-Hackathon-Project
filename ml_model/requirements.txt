@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+joblib
+streamlit
+shap
+lightgbm
+tensorflow
+paho-mqtt
+kagglehub
+plotly
+matplotlib

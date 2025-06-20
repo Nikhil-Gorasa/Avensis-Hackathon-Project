@@ -1,0 +1,12 @@
+{
+    "feature_names": [
+        "temperature_C",
+        "humidity_%",
+        "ammonia_ppm",
+        "ph"
+    ],
+    "engineered_features": [
+        "temp_humidity_interaction",
+        "ammonia_temp_ratio"
+    ]
+}

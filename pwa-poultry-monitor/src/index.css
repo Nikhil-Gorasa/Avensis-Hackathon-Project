@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-white text-gray-900 m-0 min-h-screen;
+  }
+}
+
+@layer components {
+  .metric-card {
+    @apply bg-white rounded-lg shadow-md p-6 border transition-colors duration-200;
+  }
+  
+  .metric-value {
+    @apply text-3xl font-semibold;
+  }
+  
+  .metric-label {
+    @apply text-sm text-gray-500 mt-1;
+  }
+  
+  .safe-range {
+    @apply text-xs text-gray-600 mt-2;
+  }
+}
