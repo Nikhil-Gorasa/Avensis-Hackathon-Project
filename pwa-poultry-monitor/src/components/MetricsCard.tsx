@@ -1,107 +1,174 @@
 import React from 'react';
-import { ArrowUpIcon, ArrowDownIcon } from '@heroicons/react/24/solid';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import type { PoultryMetrics } from '../types';
-
-const SAFE_RANGES = {
-  temperature: { min: 20, max: 25, unit: '°C' },
-  humidity: { min: 50, max: 70, unit: '%' },
-  ammonia: { min: 0, max: 15, unit: 'ppm' },
-  ph: { min: 6.5, max: 7.5, unit: '' }
-};
 
 interface MetricsCardProps {
   metrics: PoultryMetrics;
 }
 
 const MetricsCard: React.FC<MetricsCardProps> = ({ metrics }) => {
-  const getStatusConfig = (value: number, type: keyof typeof SAFE_RANGES) => {
-    const range = SAFE_RANGES[type];
-    if (value < range.min) {
-      return {
-        color: 'border-blue-500 bg-blue-50',
-        icon: <ArrowDownIcon className="h-5 w-5 text-blue-500" />,
-        message: 'Too Low'
-      };
-    } else if (value > range.max) {
-      return {
-        color: 'border-red-500 bg-red-50',
-        icon: <ArrowUpIcon className="h-5 w-5 text-red-500" />,
-        message: 'Too High'
-      };
+  const { t } = useTranslation();
+
+  const getStatus = (value: number, min: number, max: number) => {
+    if (value < min) return 'tooLow';
+    if (value > max) return 'tooHigh';
+    return 'optimal';
+  };
+
+  const metricsConfig = [
+    {
+      key: 'temperature_C',
+      icon: '🌡️',
+      label: t('metrics.temperature'),
+      value: metrics.temperature_C,
+      unit: t('units.temperature'),
+      min: 20,
+      max: 25,
+      safeRange: t('ranges.temperature', { min: 20, max: 25 })
+    },
+    {
+      key: 'humidity_percent',
+      icon: '💧',
+      label: t('metrics.humidity'),
+      value: metrics.humidity_percent,
+      unit: t('units.humidity'),
+      min: 50,
+      max: 70,
+      safeRange: t('ranges.humidity', { min: 50, max: 70 })
+    },
+    {
+      key: 'ammonia_ppm',
+      icon: '☁️',
+      label: t('metrics.ammonia'),
+      value: metrics.ammonia_ppm,
+      unit: t('units.ammonia'),
+      min: 0,
+      max: 15,
+      safeRange: t('ranges.ammonia', { min: 0, max: 15 })
+    },
+    {
+      key: 'ph',
+      icon: '🧪',
+      label: t('metrics.ph'),
+      value: metrics.ph,
+      unit: t('units.ph'),
+      min: 6.5,
+      max: 7.5,
+      safeRange: t('ranges.ph', { min: 6.5, max: 7.5 })
     }
-    return {
-      color: 'border-green-500 bg-green-50',
-      icon: null,
-      message: 'Optimal'
-    };
-  };
-
-  const renderMetricCard = (
-    label: string,
-    value: number,
-    type: keyof typeof SAFE_RANGES,
-    icon: string
-  ) => {
-    const { color, icon: statusIcon, message } = getStatusConfig(value, type);
-    const range = SAFE_RANGES[type];
-
-    return (
-      <div className={`metric-card ${color} relative overflow-hidden group hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300`}>
-        <div className="absolute top-0 right-0 p-2 text-xs font-medium rounded-bl-lg bg-opacity-90 text-gray-600">
-          {message}
-        </div>
-        
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center">
-            <span className="text-2xl mr-2">{icon}</span>
-            <h3 className="text-lg font-semibold text-gray-800">{label}</h3>
-          </div>
-          {statusIcon}
-        </div>
-
-        <div className="metric-value flex items-baseline">
-          <span className="text-4xl font-bold text-gray-900">{value.toFixed(1)}</span>
-          <span className="text-lg ml-1 text-gray-600">{range.unit}</span>
-        </div>
-
-        <div className="mt-4 space-y-2">
-          <div className="safe-range flex justify-between items-center">
-            <span className="text-sm text-gray-600">Safe Range:</span>
-            <span className="font-medium text-gray-800">
-              {range.min} - {range.max} {range.unit}
-            </span>
-          </div>
-          
-          <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-gradient-to-r from-blue-500 via-green-500 to-red-500"
-              style={{
-                clipPath: `polygon(
-                  ${(range.min / (range.max * 1.5)) * 100}% 0,
-                  ${(range.max / (range.max * 1.5)) * 100}% 0,
-                  ${(range.max / (range.max * 1.5)) * 100}% 100%,
-                  ${(range.min / (range.max * 1.5)) * 100}% 100%
-                )`
-              }}
-            />
-            <div 
-              className="h-full w-2 bg-black transform -translate-y-full"
-              style={{
-                marginLeft: `${(value / (range.max * 1.5)) * 100}%`
-              }}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  };
+  ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {renderMetricCard('Temperature', metrics.temperature_C, 'temperature', '🌡️')}
-      {renderMetricCard('Humidity', metrics.humidity_percent, 'humidity', '💧')}
-      {renderMetricCard('Ammonia Level', metrics.ammonia_ppm, 'ammonia', '☁️')}
-      {renderMetricCard('pH Level', metrics.ph, 'ph', '⚗️')}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <AnimatePresence>
+        {metricsConfig.map((metric) => {
+          const status = getStatus(
+            metric.value,
+            metric.min,
+            metric.max
+          );
+
+          const percentage = ((metric.value - metric.min) / (metric.max - metric.min)) * 100;
+          const safeZoneStart = 0;
+          const safeZoneEnd = 100;
+          const indicatorPosition = Math.max(0, Math.min(100, percentage));
+
+          return (
+            <motion.div
+              key={metric.key}
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white rounded-lg p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
+            >
+              <div className="flex justify-between items-start mb-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">{metric.icon}</span>
+                  <h3 className="text-gray-700 font-medium">
+                    {metric.label}
+                  </h3>
+                </div>
+                <motion.span
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`text-sm font-medium px-3 py-1 rounded-full ${
+                    status === 'optimal' ? 'bg-green-100 text-green-800' :
+                    status === 'tooHigh' ? 'bg-red-100 text-red-800' :
+                    'bg-yellow-100 text-yellow-800'
+                  }`}
+                >
+                  {t(`status.${status}`)}
+                </motion.span>
+              </div>
+
+              <motion.div 
+                className="mt-4"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+              >
+                <div className="flex items-baseline">
+                  <motion.span
+                    key={metric.value}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-4xl font-bold text-gray-900"
+                  >
+                    {metric.value.toFixed(1)}
+                  </motion.span>
+                  <span className="ml-1 text-gray-500 text-lg">
+                    {metric.unit}
+                  </span>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="mt-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3, delay: 0.2 }}
+              >
+                <div className="flex justify-between items-center text-sm text-gray-500 mb-1">
+                  <span>{t('metrics.safeRange')}:</span>
+                  <span>{metric.safeRange}</span>
+                </div>
+                <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="relative w-full h-full">
+                    <div className="absolute inset-0 flex">
+                      <motion.div 
+                        className="bg-gray-200 h-full"
+                        initial={{ flex: 1 }}
+                        animate={{ flex: safeZoneStart }}
+                        transition={{ type: "spring", stiffness: 100 }}
+                      />
+                      <motion.div 
+                        className="bg-green-200 h-full"
+                        initial={{ flex: 0 }}
+                        animate={{ flex: safeZoneEnd - safeZoneStart }}
+                        transition={{ type: "spring", stiffness: 100 }}
+                      />
+                      <motion.div 
+                        className="bg-gray-200 h-full"
+                        initial={{ flex: 1 }}
+                        animate={{ flex: 100 - safeZoneEnd }}
+                        transition={{ type: "spring", stiffness: 100 }}
+                      />
+                    </div>
+                    <motion.div
+                      className="absolute h-full w-2 bg-black transform -translate-x-1/2"
+                      initial={{ left: `${indicatorPosition}%` }}
+                      animate={{ left: `${indicatorPosition}%` }}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          );
+        })}
+      </AnimatePresence>
     </div>
   );
 };

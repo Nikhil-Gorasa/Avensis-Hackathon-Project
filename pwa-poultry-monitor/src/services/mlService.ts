@@ -1,8 +1,5 @@
 import type { PoultryMetrics, AnomalyDetection } from '../types';
 
-// This would be replaced with actual API calls to your ML model endpoint
-const ML_API_ENDPOINT = 'YOUR_ML_API_ENDPOINT';
-
 // Define optimal ranges for each metric
 const OPTIMAL_RANGES = {
   temperature: {
@@ -118,7 +115,11 @@ function calculateDeviation(value: number, min: number, max: number): number {
 }
 
 // Calculate SHAP values based on deviation from optimal ranges
-function calculateShapValues(metrics: PoultryMetrics) {
+function calculateShapValues(metrics: PoultryMetrics): {
+  feature: string;
+  importance: number;
+  contribution: 'positive' | 'negative';
+}[] {
   const shapValues = [
     {
       feature: 'Temperature',
@@ -166,8 +167,8 @@ function calculateShapValues(metrics: PoultryMetrics) {
     // Determine if the value is contributing positively or negatively to risk
     const contribution = 
       (feature.value < feature.range.min || feature.value > feature.range.max) 
-        ? 'positive'  // Outside optimal range increases risk
-        : 'negative'; // Within optimal range decreases risk
+        ? 'positive' as const  // Outside optimal range increases risk
+        : 'negative' as const; // Within optimal range decreases risk
 
     return {
       feature: feature.feature,

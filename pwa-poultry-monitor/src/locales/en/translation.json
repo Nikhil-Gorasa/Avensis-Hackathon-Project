@@ -1,0 +1,134 @@
+{
+  "languageSelector": {
+    "title": "Select Your Language",
+    "description": "Choose your preferred language to continue",
+    "continue": "Continue"
+  },
+  "header": {
+    "title": "Poultry Monitoring System",
+    "analyticsTitle": "Analytics Dashboard"
+  },
+  "metrics": {
+    "temperature": "Temperature",
+    "humidity": "Humidity",
+    "ammonia": "Ammonia Level",
+    "ph": "pH Level",
+    "feature": "Feature",
+    "safeRange": "Safe Range"
+  },
+  "ranges": {
+    "temperature": "{{min}} - {{max}}°C",
+    "humidity": "{{min}} - {{max}}%",
+    "ammonia": "{{min}} - {{max}} ppm",
+    "ph": "{{min}} - {{max}}"
+  },
+  "analysis": {
+    "systemHealth": "System Health",
+    "currentStatus": "Current Status",
+    "riskAnalysis": "Risk Analysis",
+    "featureRiskAnalysis": "Feature Risk Analysis",
+    "riskContribution": "Risk Contribution",
+    "lastUpdated": "Last Updated",
+    "autoUpdate": "Auto-updating every 3 seconds",
+    "refreshing": "Refreshing",
+    "allParametersNormal": "All parameters are within normal range",
+    "criticalParameters": "Critical Parameters",
+    "riskIndicators": {
+      "highRisk": "High Risk",
+      "withinRange": "Within Range"
+    },
+    "parameterAnalysis": {
+      "ammonia": {
+        "name": "Ammonia",
+        "value": "100.0%",
+        "status": "High Risk"
+      },
+      "humidity": {
+        "name": "Humidity",
+        "value": "21.8%",
+        "status": "Within Range"
+      },
+      "temperature": {
+        "name": "Temperature",
+        "value": "21.0%",
+        "status": "Within Range"
+      },
+      "ph": {
+        "name": "pH Level",
+        "value": "5.5%",
+        "status": "Within Range"
+      }
+    }
+  },
+  "alerts": {
+    "criticalConditions": "Critical Conditions Detected",
+    "attentionRequired": "Immediate attention required for some parameters",
+    "analyticsTitle": "Analytics Alert"
+  },
+  "dashboard": {
+    "title": "Analytics Dashboard",
+    "backToMonitor": "Back to Monitor",
+    "systemHealth": "System Health",
+    "statusReport": "Status Report",
+    "criticalIssuesDetected": "Critical Issues Detected",
+    "requiresAttention": "{{parameter}} requires attention",
+    "allParametersNormal": "All parameters are within acceptable ranges. System is operating normally.",
+    "charts": {
+      "historicalTrends": "Historical Trends",
+      "riskAnalysis": "Risk Analysis",
+      "parameterCorrelation": "Parameter Correlation"
+    },
+    "summary": {
+      "title": "Summary Report",
+      "healthStatus": "Health Status",
+      "criticalIssues": "Critical Issues",
+      "recommendations": "Recommendations"
+    }
+  },
+  "riskLevels": {
+    "high": "High Risk",
+    "medium": "Medium Risk",
+    "low": "Low Risk"
+  },
+  "units": {
+    "temperature": "°C",
+    "humidity": "%",
+    "ammonia": "ppm",
+    "ph": ""
+  },
+  "recommendations": {
+    "title": "Recommended Actions",
+    "checkVentilation": "Check ventilation system immediately",
+    "verifyTemperature": "Verify temperature control equipment",
+    "inspectHumidity": "Check for water leaks or moisture sources",
+    "considerRelocation": "Consider temporary relocation if necessary",
+    "monitorParameters": "Monitor affected parameters more frequently",
+    "adjustControls": "Adjust environmental controls as needed",
+    "scheduleMaintenance": "Schedule maintenance check if issues persist"
+  },
+  "status": {
+    "tooLow": "Too Low",
+    "tooHigh": "Too High",
+    "optimal": "Optimal"
+  },
+  "buttons": {
+    "backToMonitor": "Back to Monitor",
+    "viewDashboard": "View Dashboard",
+    "refresh": "Refresh Data",
+    "export": "Export Report"
+  },
+  "charts": {
+    "parameterTrends": "Parameter Trends",
+    "riskContribution": "Risk Contribution",
+    "historicalData": "Historical Data",
+    "loading": "Loading chart data...",
+    "noData": "No data available",
+    "lastUpdated": "Last updated at"
+  },
+  "notifications": {
+    "dataUpdated": "Data has been updated",
+    "errorFetching": "Error fetching data",
+    "criticalAlert": "Critical Alert",
+    "systemNormal": "System Normal"
+  }
+} 

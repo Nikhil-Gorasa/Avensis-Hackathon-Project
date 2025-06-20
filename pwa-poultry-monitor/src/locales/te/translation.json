@@ -1,0 +1,175 @@
+{
+  "languageSelector": {
+    "title": "మీ భాషను ఎంచుకోండి",
+    "description": "కొనసాగించడానికి మీ ప్రాధాన్య భాషను ఎంచుకోండి",
+    "continue": "కొనసాగించు"
+  },
+  "header": {
+    "title": "పౌల్ట్రీ పర్యవేక్షణ వ్యవస్థ",
+    "analyticsTitle": "విశ్లేషణ డాష్‌బోర్డ్"
+  },
+  "metrics": {
+    "temperature": "ఉష్ణోగ్రత",
+    "humidity": "తేమ",
+    "ammonia": "అమ్మోనియా స్థాయి",
+    "ph": "పీహెచ్ స్థాయి",
+    "feature": "లక్షణం",
+    "withinRange": "పరిధిలో ఉంది",
+    "tooHigh": "చాలా ఎక్కువ",
+    "tooLow": "చాలా తక్కువ",
+    "optimal": "అనుకూలం",
+    "safeRange": "సురక్షిత పరిధి"
+  },
+  "ranges": {
+    "temperature": "{{min}} - {{max}}°C",
+    "humidity": "{{min}} - {{max}}%",
+    "ammonia": "{{min}} - {{max}} ppm",
+    "ph": "{{min}} - {{max}}"
+  },
+  "analysis": {
+    "systemHealth": "వ్యవస్థ ఆరోగ్యం",
+    "riskAnalysis": "ప్రమాద విశ్లేషణ",
+    "criticalParameters": "క్రిటికల్ పారామీటర్లు",
+    "allParametersNormal": "అన్ని పారామీటర్లు సాధారణ పరిధిలో ఉన్నాయి",
+    "lastUpdated": "చివరిగా నవీకరించబడింది",
+    "autoUpdate": "ప్రతి 3 సెకన్లకు స్వయంచాలకంగా నవీకరించబడుతుంది",
+    "refreshing": "రిఫ్రెష్ అవుతోంది",
+    "currentStatus": "ప్రస్తుత స్థితి",
+    "featureRiskAnalysis": "లక్షణాల ప్రమాద విశ్లేషణ",
+    "riskContribution": "ప్రమాద సహకారం",
+    "healthyEnvironment": "ఆరోగ్యకరమైన పర్యావరణం",
+    "optimalRanges": "అన్ని పారామీటర్లు అనుకూల పరిధులలో ఉన్నాయి",
+    "issuesRequiringAttention": "శ్రద్ధ అవసరమైన సమస్యలు",
+    "healthScore": "ఆరోగ్య స్కోరు",
+    "statusReport": "స్థితి నివేదిక",
+    "parameterStatus": {
+      "ammoniaHigh": "అమ్మోనియా చాలా ఎక్కువగా ఉంది",
+      "humidityLow": "తేమ చాలా తక్కువగా ఉంది",
+      "temperatureInRange": "ఉష్ణోగ్రత పరిధిలో ఉంది",
+      "phInRange": "పీహెచ్ స్థాయి పరిధిలో ఉంది"
+    },
+    "percentageContribution": {
+      "full": "100.0%",
+      "high": "87.0%",
+      "medium": "28.1%",
+      "low": "2.3%"
+    },
+    "riskIndicators": {
+      "highRisk": "అధిక ప్రమాదం",
+      "withinRange": "పరిధిలో ఉంది",
+      "requiresAttention": "శ్రద్ధ అవసరం",
+      "normalOperation": "సిస్టమ్ సాధారణంగా పనిచేస్తోంది"
+    },
+    "parameterAnalysis": {
+      "ammonia": {
+        "name": "అమ్మోనియా",
+        "value": "100.0%",
+        "status": "అధిక ప్రమాదం"
+      },
+      "humidity": {
+        "name": "తేమ",
+        "value": "21.8%",
+        "status": "పరిధిలో ఉంది"
+      },
+      "temperature": {
+        "name": "ఉష్ణోగ్రత",
+        "value": "21.0%",
+        "status": "పరిధిలో ఉంది"
+      },
+      "ph": {
+        "name": "పీహెచ్ స్థాయి",
+        "value": "5.5%",
+        "status": "పరిధిలో ఉంది"
+      }
+    }
+  },
+  "alerts": {
+    "criticalConditions": "క్రిటికల్ పరిస్థితులు గుర్తించబడ్డాయి",
+    "attentionRequired": "కొన్ని పారామీటర్లకు వెంటనే శ్రద్ధ అవసరం",
+    "analyticsTitle": "విశ్లేషణ హెచ్చరిక"
+  },
+  "dashboard": {
+    "title": "విశ్లేషణ డాష్‌బోర్డ్",
+    "backToMonitor": "మానిటర్‌కు తిరిగి వెళ్ళు",
+    "statusReport": "స్థితి నివేదిక",
+    "criticalIssues": "క్రిటికల్ సమస్యలు కనుగొనబడ్డాయి",
+    "requiresAttention": "{{parameter}} శ్రద్ధ అవసరం",
+    "analyticsTitle": "విశ్లేషణ డాష్‌బోర్డ్",
+    "systemStatus": {
+      "title": "సిస్టమ్ స్థితి",
+      "healthScore": "ఆరోగ్య స్కోరు",
+      "riskLevel": "ప్రమాద స్థాయి",
+      "operatingNormally": "అన్ని పారామీటర్లు అంగీకార పరిధులలో ఉన్నాయి",
+      "criticalIssuesDetected": "క్రిటికల్ సమస్యలు గుర్తించబడ్డాయి",
+      "requiresAttention": "శ్రద్ధ అవసరం"
+    },
+    "charts": {
+      "historicalTrends": "చారిత్రక ధోరణులు",
+      "riskAnalysis": "ప్రమాద విశ్లేషణ",
+      "parameterCorrelation": "పారామీటర్ సహసంబంధం"
+    },
+    "summary": {
+      "title": "సారాంశ నివేదిక",
+      "healthStatus": "ఆరోగ్య స్థితి",
+      "criticalIssues": "క్రిటికల్ సమస్యలు",
+      "recommendations": "సిఫార్సులు"
+    },
+    "systemHealth": "వ్యవస్థ ఆరోగ్యం",
+    "allParametersNormal": "అన్ని పారామీటర్లు అంగీకరించదగిన పరిధుల్లో ఉన్నాయి. వ్యవస్థ సాధారణంగా పనిచేస్తోంది."
+  },
+  "riskLevels": {
+    "low": "తక్కువ ప్రమాదం",
+    "medium": "మధ్యస్థ ప్రమాదం",
+    "high": "అధిక ప్రమాదం",
+    "withinRange": "పరిధిలో ఉంది"
+  },
+  "units": {
+    "temperature": "°C",
+    "humidity": "%",
+    "ammonia": "ppm",
+    "ph": ""
+  },
+  "recommendations": {
+    "title": "సిఫార్సు చేసిన చర్యలు",
+    "checkVentilation": "వెంటిలేషన్ వ్యవస్థను వెంటనే తనిఖీ చేయండి",
+    "verifyTemperature": "ఉష్ణోగ్రత నియంత్రణ పరికరాలను ధృవీకరించండి",
+    "inspectHumidity": "నీటి లీకులు లేదా తేమ మూలాలను తనిఖీ చేయండి",
+    "considerRelocation": "అవసరమైతే తాత్కాలిక స్థలాంతరం పరిగణించండి",
+    "monitorParameters": "ప్రభావిత పారామీటర్లను మరింత తరచుగా పర్యవేక్షించండి",
+    "adjustControls": "అవసరమైనట్లుగా పర్యావరణ నియంత్రణలను సర్దుబాటు చేయండి",
+    "scheduleMaintenance": "సమస్యలు కొనసాగితే నిర్వహణ తనిఖీని షెడ్యూల్ చేయండి"
+  },
+  "status": {
+    "healthyTitle": "ఆరోగ్యకరమైన పర్యావరణం",
+    "healthyDescription": "అన్ని పారామీటర్లు అనుకూల పరిధులలో ఉన్నాయి",
+    "attentionTitle": "శ్రద్ధ అవసరం",
+    "attentionDescription": "కొన్ని పారామీటర్లకు సర్దుబాటు అవసరం",
+    "criticalTitle": "తక్షణ చర్య అవసరం",
+    "criticalDescription": "క్రిటికల్ పారామీటర్లు గుర్తించబడ్డాయి",
+    "unknownTitle": "స్థితి తెలియదు",
+    "unknownDescription": "పర్యావరణ స్థితిని నిర్ధారించలేకపోయాము",
+    "tooLow": "చాలా తక్కువ",
+    "tooHigh": "చాలా ఎక్కువ",
+    "optimal": "అనుకూలం"
+  },
+  "buttons": {
+    "backToMonitor": "మానిటర్‌కు తిరిగి వెళ్ళు",
+    "viewDashboard": "డాష్‌బోర్డ్ చూడండి",
+    "refresh": "డేటా రిఫ్రెష్ చేయండి",
+    "export": "నివేదిక ఎగుమతి చేయండి"
+  },
+  "charts": {
+    "riskContribution": "ప్రమాద సహకారం",
+    "parameterTrends": "పారామీటర్ ధోరణులు",
+    "historicalData": "చారిత్రక డేటా",
+    "loading": "చార్ట్ డేటా లోడ్ అవుతోంది...",
+    "noData": "డేటా అందుబాటులో లేదు",
+    "lastUpdated": "చివరిగా నవీకరించిన సమయం"
+  },
+  "notifications": {
+    "dataUpdated": "డేటా నవీకరించబడింది",
+    "errorFetching": "డేటా పొందడంలో లోపం",
+    "criticalAlert": "క్రిటికల్ హెచ్చరిక",
+    "systemNormal": "సిస్టమ్ సాధారణం"
+  }
+} 

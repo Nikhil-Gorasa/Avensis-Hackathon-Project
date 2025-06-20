@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/i18n.ts","./src/main.tsx","./src/vite-env.d.ts","./src/components/dashboard.tsx","./src/components/languageselector.tsx","./src/components/metricscard.tsx","./src/components/riskstatus.tsx","./src/components/shapsummary.tsx","./src/constants/index.ts","./src/services/mlservice.ts","./src/types/index.ts"],"version":"5.8.3"}

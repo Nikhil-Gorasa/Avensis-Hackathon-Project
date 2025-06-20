@@ -1,0 +1,166 @@
+{
+  "languageSelector": {
+    "title": "अपनी भाषा चुनें",
+    "description": "जारी रखने के लिए अपनी पसंदीदा भाषा चुनें",
+    "continue": "जारी रखें"
+  },
+  "header": {
+    "title": "पोल्ट्री निगरानी प्रणाली"
+  },
+  "metrics": {
+    "temperature": "तापमान",
+    "humidity": "आर्द्रता",
+    "ammonia": "अमोनिया स्तर",
+    "ph": "पीएच स्तर",
+    "feature": "विशेषता",
+    "safeRange": "सुरक्षित सीमा"
+  },
+  "ranges": {
+    "temperature": "{{min}} - {{max}}°C",
+    "humidity": "{{min}} - {{max}}%",
+    "ammonia": "{{min}} - {{max}} ppm",
+    "ph": "{{min}} - {{max}}"
+  },
+  "analysis": {
+    "systemHealth": "सिस्टम स्वास्थ्य",
+    "riskAnalysis": "जोखिम विश्लेषण",
+    "criticalParameters": "महत्वपूर्ण पैरामीटर",
+    "allParametersNormal": "सभी पैरामीटर सामान्य सीमा में हैं",
+    "lastUpdated": "अंतिम अपडेट",
+    "autoUpdate": "हर 3 सेकंड में स्वचालित अपडेट",
+    "refreshing": "रिफ्रेश हो रहा है",
+    "currentStatus": "वर्तमान स्थिति",
+    "featureRiskAnalysis": "विशेषता जोखिम विश्लेषण",
+    "riskContribution": "जोखिम योगदान",
+    "healthyEnvironment": "स्वस्थ वातावरण",
+    "optimalRanges": "सभी मापदंड आदर्श सीमा में हैं",
+    "issuesRequiringAttention": "ध्यान देने योग्य समस्याएं",
+    "healthScore": "स्वास्थ्य स्कोर",
+    "statusReport": "स्थिति रिपोर्ट",
+    "parameterStatus": {
+      "ammoniaHigh": "अमोनिया बहुत अधिक है",
+      "humidityLow": "नमी बहुत कम है",
+      "temperatureInRange": "तापमान सीमा के भीतर है",
+      "phInRange": "पीएच स्तर सीमा के भीतर है"
+    },
+    "percentageContribution": {
+      "full": "100.0%",
+      "high": "87.0%",
+      "medium": "28.1%",
+      "low": "2.3%"
+    },
+    "riskIndicators": {
+      "highRisk": "उच्च जोखिम",
+      "withinRange": "सीमा के भीतर"
+    },
+    "parameterAnalysis": {
+      "ammonia": {
+        "name": "अमोनिया",
+        "value": "100.0%",
+        "status": "उच्च जोखिम"
+      },
+      "humidity": {
+        "name": "नमी",
+        "value": "21.8%",
+        "status": "सीमा के भीतर"
+      },
+      "temperature": {
+        "name": "तापमान",
+        "value": "21.0%",
+        "status": "सीमा के भीतर"
+      },
+      "ph": {
+        "name": "पीएच स्तर",
+        "value": "5.5%",
+        "status": "सीमा के भीतर"
+      }
+    }
+  },
+  "alerts": {
+    "criticalConditions": "महत्वपूर्ण स्थितियां पाई गईं",
+    "attentionRequired": "कुछ पैरामीटर्स के लिए तत्काल ध्यान आवश्यक है",
+    "analyticsTitle": "विश्लेषण चेतावनी"
+  },
+  "dashboard": {
+    "title": "विश्लेषण डैशबोर्ड",
+    "backToMonitor": "मॉनिटर पर वापस जाएं",
+    "statusReport": "स्थिति रिपोर्ट",
+    "criticalIssues": "गंभीर समस्याएं पाई गईं",
+    "requiresAttention": "ध्यान देने की आवश्यकता है",
+    "analyticsTitle": "विश्लेषण डैशबोर्ड",
+    "systemStatus": {
+      "title": "सिस्टम स्थिति",
+      "healthScore": "स्वास्थ्य स्कोर",
+      "riskLevel": "जोखिम स्तर",
+      "operatingNormally": "सभी मापदंड स्वीकार्य सीमा में हैं",
+      "criticalIssuesDetected": "महत्वपूर्ण समस्याएं पाई गईं",
+      "requiresAttention": "ध्यान की आवश्यकता है"
+    },
+    "charts": {
+      "historicalTrends": "ऐतिहासिक प्रवृत्तियां",
+      "riskAnalysis": "जोखिम विश्लेषण",
+      "parameterCorrelation": "मापदंड सहसंबंध"
+    },
+    "summary": {
+      "title": "सारांश रिपोर्ट",
+      "healthStatus": "स्वास्थ्य स्थिति",
+      "criticalIssues": "गंभीर समस्याएं",
+      "recommendations": "सिफारिशें"
+    }
+  },
+  "riskLevels": {
+    "low": "कम जोखिम",
+    "medium": "मध्यम जोखिम",
+    "high": "उच्च जोखिम",
+    "withinRange": "सीमा के भीतर"
+  },
+  "units": {
+    "temperature": "°C",
+    "humidity": "%",
+    "ammonia": "ppm",
+    "ph": ""
+  },
+  "recommendations": {
+    "title": "अनुशंसित कार्रवाई",
+    "checkVentilation": "वेंटिलेशन सिस्टम की तुरंत जांच करें",
+    "verifyTemperature": "तापमान नियंत्रण उपकरणों की जांच करें",
+    "inspectHumidity": "पानी के रिसाव या नमी के स्रोतों की जांच करें",
+    "considerRelocation": "यदि आवश्यक हो तो अस्थायी स्थानांतरण पर विचार करें",
+    "monitorParameters": "प्रभावित मापदंडों की अधिक बार निगरानी करें",
+    "adjustControls": "आवश्यकतानुसार पर्यावरण नियंत्रणों को समायोजित करें",
+    "scheduleMaintenance": "यदि समस्याएं बनी रहती हैं तो रखरखाव जांच निर्धारित करें"
+  },
+  "status": {
+    "healthyTitle": "स्वस्थ वातावरण",
+    "healthyDescription": "सभी मापदंड आदर्श सीमा में हैं",
+    "attentionTitle": "ध्यान आवश्यक",
+    "attentionDescription": "कुछ मापदंडों को समायोजन की आवश्यकता है",
+    "criticalTitle": "तत्काल कार्रवाई आवश्यक",
+    "criticalDescription": "महत्वपूर्ण मापदंड पाए गए",
+    "unknownTitle": "स्थिति अज्ञात",
+    "unknownDescription": "वातावरण की स्थिति निर्धारित नहीं की जा सकी",
+    "tooLow": "बहुत कम",
+    "tooHigh": "बहुत अधिक",
+    "optimal": "उत्तम"
+  },
+  "buttons": {
+    "backToMonitor": "मॉनिटर पर वापस जाएं",
+    "viewDashboard": "डैशबोर्ड देखें",
+    "refresh": "डेटा रीफ्रेश करें",
+    "export": "रिपोर्ट निर्यात करें"
+  },
+  "charts": {
+    "riskContribution": "जोखिम योगदान",
+    "parameterTrends": "पैरामीटर प्रवृत्तियां",
+    "historicalData": "ऐतिहासिक डेटा",
+    "loading": "चार्ट डेटा लोड हो रहा है...",
+    "noData": "कोई डेटा उपलब्ध नहीं है",
+    "lastUpdated": "अंतिम अपडेट समय"
+  },
+  "notifications": {
+    "dataUpdated": "डेटा अपडेट किया गया है",
+    "errorFetching": "डेटा प्राप्त करने में त्रुटि",
+    "criticalAlert": "गंभीर चेतावनी",
+    "systemNormal": "सिस्टम सामान्य"
+  }
+} 

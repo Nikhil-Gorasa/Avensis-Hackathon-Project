@@ -1,13 +1,17 @@
 import React from 'react';
 import { ExclamationTriangleIcon, CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/solid';
+import { useTranslation } from 'react-i18next';
+import type { RiskLevel } from '../types';
 
 interface RiskStatusProps {
-  riskLevel: 'low' | 'medium' | 'high';
+  riskLevel: RiskLevel;
   issues: string[];
   lastUpdated: string;
 }
 
 const RiskStatus: React.FC<RiskStatusProps> = ({ riskLevel, issues, lastUpdated }) => {
+  const { t } = useTranslation();
+
   const getStatusConfig = (level: string) => {
     switch (level) {
       case 'low':
@@ -113,6 +117,10 @@ const RiskStatus: React.FC<RiskStatusProps> = ({ riskLevel, issues, lastUpdated 
           </ul>
         </div>
       )}
+
+      <div className="mt-4 text-sm text-gray-500">
+        {t('analysis.lastUpdated')}: {lastUpdated}
+      </div>
     </div>
   );
 };
